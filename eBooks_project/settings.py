@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'eBook_app',
+    # Use just folder name
 ]
 # Hooks middleware and authentication related middleware
 MIDDLEWARE = [
