@@ -13,23 +13,29 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Root File getting
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Using this key we encrypt key
 SECRET_KEY = 'django-insecure-d3w56$k&j=!zlszk#2jzy&f!bto7z#v^f=8@o_j1dwhl8!@rfn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Run in development mode
 DEBUG = True
 
+# Add the host server url linked in this hosts
 ALLOWED_HOSTS = []
 
 
 # Application definition
 
+# Register the application in this section
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
+# Hooks middleware and authentication related middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -49,14 +55,19 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# This is root url. main enter point
+# To access file used .
 ROOT_URLCONF = 'eBooks_project.urls'
 
+# Send the response. Django not understand the html it only understand the string so this reason django have templates machismo
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+        # Using above array we add the custom templates
         'APP_DIRS': True,
         'OPTIONS': {
+            # In this section it define how to access context or variable  or html template
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -67,16 +78,18 @@ TEMPLATES = [
     },
 ]
 
+# When add production mode we add server url. This is gate way between server and Django
 WSGI_APPLICATION = 'eBooks_project.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# We add database or config the database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        # This is default database. Sqlite is binary form data store. In single file all the data will be stored in this file
     }
 }
 
@@ -105,19 +118,22 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# Change time zone into kolkata by default it stor in utc formate
+TIME_ZONE = 'Asia/Kolkata'
 
+# It is support multi linked for example ite support english, kannada,tamil
 USE_I18N = True
 
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+# Static files (CSS, JavaScript, Images)
 
 STATIC_URL = 'static/'
 
-# Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+# Default primary key field type
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# python manage.py runserver run python
