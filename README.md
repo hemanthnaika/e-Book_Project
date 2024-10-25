@@ -94,4 +94,4 @@ To get the project running locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/vinod-pattar/ebooks_project.git
+   git clone https://github.com/hemanthnaika/ebooks_project.git
